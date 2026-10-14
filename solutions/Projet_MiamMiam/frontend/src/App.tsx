@@ -1,12 +1,21 @@
-import RecipeCard from "./components/RecipeCard";
+import PageLayout from "./components/PageLayout";
+import RecipeList from "./components/RecipeList";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
+
+const theme = createTheme({
+  palette: {
+    primary: { main: "#e67300" },
+  },
+});
 
 const App = () => {
   return (
-    <div className="app">
-      <h1>MiamMiam</h1>
-      <RecipeCard />
-      <RecipeCard />
-    </div>
+    <PageLayout title="MiamMiam">
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <RecipeList />
+      </ThemeProvider>
+    </PageLayout>
   );
 };
 
